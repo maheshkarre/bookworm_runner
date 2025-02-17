@@ -93,8 +93,8 @@ jobs:
             - Program eMMC from host same like MicroSD
             ```
         files: |
-          ${{ github.workspace }}/builder/ospack-bookworm-arm64.tar.gz
-          ${{ github.workspace }}/builder/openeia-6tops-bookworm-x11-kde-v1.15.bmap
-          ${{ github.workspace }}/builder/openeia-6tops-bookworm-x11-kde-v1.15.img.gz
+          ${{ github.workspace }}/bookwormBuilder/ospack-bookworm-arm64.tar.gz
+          ${{ github.workspace }}/bookwormBuilder/openeia-6tops-bookworm-x11-kde-v1.15.bmap
+          ${{ github.workspace }}/bookwormBuilder/openeia-6tops-bookworm-x11-kde-v1.15.img.gz
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
