@@ -70,21 +70,21 @@ jobs:
         sudo apt-get update
         sudo apt install qemu-user-static
         sudo apt install binfmt-support
-        edgeble-container -b v1.15 -c .config-kde.yaml bookworm
+        edgeble-container -b v1.17-rk4.1 -c .config-kde.yaml bookworm
 
     - name: Upload output artifacts
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: "v1.15"
+        tag_name: "v1.17-rk4.1"
         body: |
           - Summary:
             ```
             Jagan:
-            - add ospack in release
+            - add NPU 9.8 kernel 
             ```
           - SD
             ```
-            sudo bmaptool copy --bmap openeia-6tops-bookworm-x11-gnome-v1.15.bmap openeia-6tops-bookworm-x11-gnome-v1.15.img.gz /dev/sdX
+            sudo bmaptool copy --bmap openeia-6tops-bookworm-x11-gnome-v1.17-rk4.1.bmap openeia-6tops-bookworm-x11-gnome-v1.17-rk4.1.img.gz /dev/sdX
             ```
           - eMMC
             ```
@@ -94,7 +94,7 @@ jobs:
             ```
         files: |
           ${{ github.workspace }}/bookwormBuilder/ospack-bookworm-arm64.tar.gz
-          ${{ github.workspace }}/bookwormBuilder/openeia-6tops-bookworm-x11-kde-v1.15.bmap
-          ${{ github.workspace }}/bookwormBuilder/openeia-6tops-bookworm-x11-kde-v1.15.img.gz
+          ${{ github.workspace }}/bookwormBuilder/openeia-6tops-bookworm-x11-kde-v1.17-rk4.1.bmap
+          ${{ github.workspace }}/bookwormBuilder/openeia-6tops-bookworm-x11-kde-v1.17-rk4.1.img.gz
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
